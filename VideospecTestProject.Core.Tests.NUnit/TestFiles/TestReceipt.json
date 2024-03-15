@@ -1,0 +1,61 @@
+{
+  "Version": 3,
+  "DocumentFormat": "1.2",
+  "Document": {
+    "Tag": 3,
+    "User": "Тестовая организация",
+    "UserInn": "3245001416",
+    "Number": 68,
+    "DateTime": "2024-03-13T11:21:00",
+    "ShiftNumber": 17,
+    "OperationType": 1,
+    "TaxationType": 4,
+    "Operator": "СИС. АДМИНИСТРАТОР",
+    "KKT_RegNumber": "0000000001015454    ",
+    "FN_FactoryNumber": "9999078902009656",
+    "Items": [
+      {
+        "Name": "Прокат SUP досок в Surf Samara",
+        "Price": 21100,
+        "Quantity": 1,
+        "Total": 21100,
+        "Supplier": {
+          "Supplier_Name": "ООО \"Овалик\""
+        },
+        "CalculationMethod": 2,
+        "SubjectType": 1,
+        "NDS_PieceSumm": 21100,
+        "NDS_Rate": 6,
+        "NDS_Summ": 21100,
+        "ProductUnitOfMeasure": 0,
+        "Supplier_INN": "6350029550  "
+      }
+    ],
+    "RetailPlaceAddress": "Москва, Ленинская Слобода, 19",
+    "Buyer_Address": "info@ovalik.com",
+    "Sender_Address": "noreply@ofd.ru",
+    "NdsNA_TotalSumm": 21100,
+    "Amount_Total": 21100,
+    "Amount_Cash": 0,
+    "Amount_ECash": 21100,
+    "Document_Number": 5446,
+    "FiscalSign": "MQQNHB1J",
+    "DecimalFiscalSign": "219946313",
+    "InternetSign": 1,
+    "Format_Version": 4,
+    "Amount_Advance": 0,
+    "Amount_Loan": 0,
+    "Amount_Granting": 0,
+    "TaxAuthority_Site": "nalog.gov.ru",
+    "Calculation_Place": "ovalik.com"
+  },
+  "Tag": 3,
+  "UserInn": "3245001416",
+  "KktRegNumber": "0000000001015454",
+  "FnNumber": "9999078902009656",
+  "DocNumber": 5446,
+  "DocDateTime": "2024-03-13T11:21:00",
+  "DocFiscalSign": "MQQNHB1J",
+  "DecimalFiscalSign": "219946313",
+  "CDateUtc": "2024-03-13T08:21:07"
+}

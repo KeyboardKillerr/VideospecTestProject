@@ -1,0 +1,55 @@
+﻿<Page
+    x:Class="VideospecTestProject.Uwp.Pages.MainHubPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:VideospecTestProject.Uwp.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Frame
+        x:Name="mainFrame"
+        Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Button
+                Click="Ofd_Click" 
+                Content="ОФД" 
+                Height="137" 
+                Width="306" 
+                FontSize="48" 
+                Foreground="White" 
+                Background="#FF12419F" 
+                HorizontalAlignment="Center"/>
+
+            <Button
+                Grid.Row="1"
+                Click="Service1_Click"
+                Content="СЕРВИС 1" 
+                Height="137" 
+                Width="306"  
+                FontSize="48" 
+                Foreground="White" 
+                Background="#FF12419F" 
+                HorizontalAlignment="Center"/>
+
+            <Button
+                Grid.Row="2"
+                Click="Service2_Click" 
+                Content="СЕРВИС 2" 
+                Height="137" 
+                Width="306"  
+                FontSize="48" 
+                Foreground="White"
+                Background="#FF12419F"
+                HorizontalAlignment="Center"/>  
+
+        </Grid>
+    </Frame>
+</Page>
