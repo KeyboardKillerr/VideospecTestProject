@@ -25,24 +25,24 @@ namespace VideospecTestProject.Uwp.Pages
     /// </summary>
     public sealed partial class AuthPage : Page
     {
-        private readonly LoginViewModel vm;
+        private readonly LoginViewModel viewModel;
 
         public AuthPage()
         {
             InitializeComponent();
-            vm = App.ViewModels.LoginViewModel;
+            viewModel = App.ViewModels.LoginViewModel;
         }
 
-        internal LoginViewModel ViewModel { get { return vm; } }
+        internal LoginViewModel ViewModel => viewModel;
 
         private void PassBox_PasswordChanged(object sender, RoutedEventArgs e)
         {
-            vm.Password = PassBox.Password;
+            viewModel.Password = PassBox.Password;
         }
 
         private void Return_Click(object sender, RoutedEventArgs e)
         {
-            mainFrame.Navigate(typeof(ServicePage));
+            Frame.Navigate(typeof(MainPage));
         }
     }
 }

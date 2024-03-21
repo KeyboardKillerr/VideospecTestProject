@@ -1,4 +1,4 @@
-﻿using Services.Api;
+﻿using ReceiptService.Api;
 using System;
 using System.Security.Authentication;
 using System.Threading.Tasks;
@@ -16,7 +16,7 @@ namespace ViewModel.ViewModels
         private readonly ViewModelHub hub;
 
         private readonly IAsyncCommand loginCommand;
-        public IAsyncCommand LoginCommand { get { return loginCommand; } }
+        public IAsyncCommand LoginCommand => loginCommand;
 
         internal LoginViewModel(
             ViewModelHub hub, 
@@ -38,6 +38,7 @@ namespace ViewModel.ViewModels
             ResetAll();
 
             if (!result) ErrorHandle(new AuthenticationException("Неверный логин или пароль."));
+            messageHandler.MessageHandle("Авторизация успешна");
         }
 
         private bool LoginCanExecute()
@@ -84,7 +85,7 @@ namespace ViewModel.ViewModels
         private void ResetAll()
         {
             Login = "";
-            Password = "";
+            //Password = "";
         }
     }
 }

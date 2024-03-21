@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using VideospecTestProject.Uwp.Pages;
 using ViewModel;
 using ViewModelBase.Commands.ErrorHandlers;
 using ViewModelBase.Commands.MessageHandler;
@@ -11,10 +12,12 @@ using Windows.ApplicationModel.Activation;
 using Windows.Devices.Bluetooth.Advertisement;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.WindowManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
+using Windows.UI.Xaml.Hosting;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
@@ -83,6 +86,8 @@ namespace VideospecTestProject.Uwp
                 // Обеспечение активности текущего окна
                 Window.Current.Activate();
             }
+
+            //CreateReceiptWindow();
         }
 
         /// <summary>
@@ -107,6 +112,15 @@ namespace VideospecTestProject.Uwp
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: Сохранить состояние приложения и остановить все фоновые операции
             deferral.Complete();
+        }
+
+        private async void CreateReceiptWindow()
+        {
+            AppWindow appWindow = await AppWindow.TryCreateAsync();
+            Frame appWindowContentFrame = new Frame();
+            appWindowContentFrame.Navigate(typeof(ReceiptPage));
+            ElementCompositionPreview.SetAppWindowContent(appWindow, appWindowContentFrame);
+            await appWindow.TryShowAsync();
         }
     }
 }

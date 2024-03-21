@@ -1,18 +1,128 @@
 ﻿<Page
-    x:Class="VideospecTestProject.Uwp.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:VideospecTestProject.Uwp"
+    xmlns:local="using:VideospecTestProject.Uwp.Pages"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    MinHeight="520"
-    MinWidth="800"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
-    Foreground="Black">
-
-    <Frame
-        x:Name="mainFrame"
-        Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"/>
-
+    x:Class="VideospecTestProject.Uwp.Pages.MainPage"
+    mc:Ignorable="d" 
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    
+    <Grid
+        Background="White">
+        
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        
+        <StackPanel 
+            Grid.Column="0" 
+            Grid.Row="0" 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center" 
+            Padding="20">
+            
+            <Button 
+                Command="{
+                    x:Bind Path=ViewModel.SelectShowerCommand,
+                    Mode=OneWay}"
+                Click="ButtonPayment_Click" 
+                Content="Душевая" 
+                Height="137" 
+                Width="306" 
+                FontSize="48" 
+                Foreground="White" 
+                Background="#FF12419F" 
+                HorizontalAlignment="Center"/>
+            
+        </StackPanel>
+        
+        <StackPanel 
+            Grid.Column="0" 
+            Grid.Row="1" 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center" 
+            Padding="20">
+            
+            <Button 
+                Command="{
+                    x:Bind Path=ViewModel.SelectLaundryCommand,
+                    Mode=OneWay}"
+                Click="ButtonPayment_Click" 
+                Content="Стирка" 
+                Height="137" 
+                Width="306"  
+                FontSize="48" 
+                Foreground="White" 
+                Background="#FF12419F"
+                HorizontalAlignment="Center"/>
+            
+        </StackPanel>
+        
+        <StackPanel 
+            Grid.Column="0" 
+            Grid.Row="2" 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center" 
+            Padding="20">
+            
+            <Button 
+                Command="{
+                    x:Bind Path=ViewModel.SelectToiletCommand,
+                    Mode=OneWay}"
+                Click="ButtonPayment_Click" 
+                Content="Туалет" 
+                Height="137" 
+                Width="306" 
+                FontSize="48" 
+                Foreground="White"
+                Background="#FF12419F"
+                HorizontalAlignment="Center"/>
+            
+        </StackPanel>
+        
+        <TextBlock 
+            x:Name="textBlock" 
+            Grid.Column="1" 
+            Grid.Row="0" 
+            HorizontalAlignment="Center" 
+            TextWrapping="Wrap" 
+            Text="200 руб." 
+            VerticalAlignment="Center" 
+            FontSize="48" 
+            Foreground="#FFDC450C" 
+            FontWeight="Bold"/>
+        
+        <TextBlock 
+            x:Name="textBlock_Копировать" 
+            Grid.Column="1" 
+            Grid.Row="1" 
+            HorizontalAlignment="Center" 
+            TextWrapping="Wrap" 
+            Text="200 руб." 
+            VerticalAlignment="Center" 
+            FontSize="48" 
+            Foreground="#FFDC450C" 
+            FontWeight="Bold"/>
+        
+        <TextBlock 
+            x:Name="textBlock_Копировать1" 
+            Grid.Column="1" 
+            Grid.Row="2" 
+            HorizontalAlignment="Center" 
+            TextWrapping="Wrap" 
+            Text="25 руб." 
+            VerticalAlignment="Center"
+            FontSize="48" 
+            Foreground="#FFDC450C" 
+            FontWeight="Bold"/>
+        
+    </Grid>
+    
 </Page>

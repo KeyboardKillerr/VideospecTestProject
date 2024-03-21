@@ -1,34 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using System.Threading.Tasks;
-using VideospecTestProject.Uwp.Pages;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI.Popups;
+﻿using ViewModel.ViewModels;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
 
 // Документацию по шаблону элемента "Пустая страница" см. по адресу https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x419
 
-namespace VideospecTestProject.Uwp
+namespace VideospecTestProject.Uwp.Pages
 {
     /// <summary>
     /// Пустая страница, которую можно использовать саму по себе или для перехода внутри фрейма.
+    // <ActivatableClass ActivatableClassId="VendiosRuntime.TimerBackgroundTask" ThreadingModel="both" /> в манифесте потому как UPW перестала поддерживать ассинхронность, манифест автогенерируем
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        private readonly PaymentViewModel viewModel;
+
         public MainPage()
         {
             InitializeComponent();
-            mainFrame.Navigate(typeof(MainHubPage));
+            viewModel = App.ViewModels.PaymentViewModel;
+        }
+
+        internal PaymentViewModel ViewModel => viewModel;
+
+        private void ButtonPayment_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(TypePaymentPage));
+
         }
     }
 }

@@ -125,16 +125,24 @@
     <Compile Include="Pages\AuthPage.xaml.cs">
       <DependentUpon>AuthPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\MainHubPage.xaml.cs">
-      <DependentUpon>MainHubPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\ServicePage.xaml.cs">
-      <DependentUpon>ServicePage.xaml</DependentUpon>
+    <Compile Include="Pages\PayByCardPage.xaml.cs">
+      <DependentUpon>PayByCardPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PayByCashPage.xaml.cs">
+      <DependentUpon>PayByCashPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ReceiptPage.xaml.cs">
+      <DependentUpon>ReceiptPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TypePaymentPage.xaml.cs">
+      <DependentUpon>TypePaymentPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Timer\TimerBackgroundTask.cs" />
+    <Compile Include="Timer\UtilitiesTimer.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -142,6 +150,26 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\LargeTile.scale-100.png" />
+    <Content Include="Assets\LargeTile.scale-125.png" />
+    <Content Include="Assets\LargeTile.scale-150.png" />
+    <Content Include="Assets\LargeTile.scale-200.png" />
+    <Content Include="Assets\LargeTile.scale-400.png" />
+    <Content Include="Assets\RUB.scale-100.png" />
+    <Content Include="Assets\RUB.scale-125.png" />
+    <Content Include="Assets\RUB.scale-150.png" />
+    <Content Include="Assets\RUB.scale-200.png" />
+    <Content Include="Assets\RUB.scale-400.png" />
+    <Content Include="Assets\SplashScreen.scale-100.png" />
+    <Content Include="Assets\SplashScreen.scale-125.png" />
+    <Content Include="Assets\SplashScreen.scale-150.png" />
+    <Content Include="Assets\SplashScreen.scale-400.png" />
+    <Content Include="Assets\StoreLogo.backup.png" />
+    <Content Include="Assets\visa.scale-100.png" />
+    <Content Include="Assets\visa.scale-125.png" />
+    <Content Include="Assets\visa.scale-150.png" />
+    <Content Include="Assets\visa.scale-200.png" />
+    <Content Include="Assets\visa.scale-400.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -160,17 +188,25 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\MainHubPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Pages\MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\ServicePage.xaml">
+    <Page Include="Pages\PayByCardPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PayByCashPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ReceiptPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\TypePaymentPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -179,6 +215,10 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DataModel\DataModel.csproj">
+      <Project>{6596f385-de94-49e4-b8c4-ff4f98b2d833}</Project>
+      <Name>DataModel</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ViewModelBase\ViewModelBase.csproj">
       <Project>{b8d1c2cc-5158-4665-828f-47887c3a7859}</Project>
       <Name>ViewModelBase</Name>

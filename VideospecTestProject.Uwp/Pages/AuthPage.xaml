@@ -8,82 +8,81 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Frame
-        x:Name="mainFrame"
-        Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid 
+        Background="White">
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="168*"/>
+            <ColumnDefinition Width="415*"/>
+            <ColumnDefinition Width="168*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="309*"/>
+            <RowDefinition Height="582*"/>
+            <RowDefinition Height="109*"/>
+        </Grid.RowDefinitions>
 
-        <Grid Background="White">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="168*"/>
-                <ColumnDefinition Width="415*"/>
-                <ColumnDefinition Width="168*"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="309*"/>
-                <RowDefinition Height="582*"/>
-                <RowDefinition Height="109*"/>
-            </Grid.RowDefinitions>
+        <StackPanel 
+            x:Name="ButtonStack" 
+            Grid.Row="1" 
+            Grid.Column="1">
 
-            <StackPanel 
-                x:Name="ButtonStack" 
-                Grid.Row="1" 
-                Grid.Column="1">
+            <TextBox
+                Text="{
+                    x:Bind Path=ViewModel.Login,
+                    Mode=TwoWay,
+                    UpdateSourceTrigger=PropertyChanged}"
+                PlaceholderText="Логин"
+                PlaceholderForeground="Gray"
+                FontSize="36"  
+                Foreground="Black" 
+                Background="#66FFFFFF" 
+                TextWrapping="Wrap" 
+                Height="110"/>
 
-                <TextBox
-                    Text="{
-                        x:Bind Path=ViewModel.Login,
-                        Mode=TwoWay,
-                        UpdateSourceTrigger=PropertyChanged}"
-                    PlaceholderText="Логин"
-                    PlaceholderForeground="Gray"
-                    FontSize="36"  
-                    Foreground="Black" 
-                    Background="#66FFFFFF" 
-                    TextWrapping="Wrap" 
-                    Height="110"/>
+            <PasswordBox
+                x:Name="PassBox"
+                FontSize="36"  
+                Foreground="Black" 
+                Background="#66FFFFFF"
+                PlaceholderText="Пароль"
+                Height="110"
+                HorizontalContentAlignment="Center"
+                PasswordChanged="PassBox_PasswordChanged">
+                <PasswordBox.Resources>
+                    <SolidColorBrush
+                        x:Key="TextControlPlaceholderForegroundFocused" Color="Gray"/>
+                    <SolidColorBrush
+                        x:Key="TextControlPlaceholderForeground" Color="Gray"/>
+                </PasswordBox.Resources>
+            </PasswordBox>
 
-                <PasswordBox
-                    x:Name="PassBox"
-                    FontSize="36"  
-                    Foreground="Black" 
-                    Background="#66FFFFFF"
-                    PlaceholderText="Пароль"
-                    Height="110"
-                    HorizontalContentAlignment="Center"
-                    PasswordChanged="PassBox_PasswordChanged">
-                    <PasswordBox.Resources>
-                        <SolidColorBrush
-                            x:Key="TextControlPlaceholderForegroundFocused" Color="Gray"/>
-                        <SolidColorBrush
-                            x:Key="TextControlPlaceholderForeground" Color="Gray"/>
-                    </PasswordBox.Resources>
-                </PasswordBox>
-
-                <Button 
-                    Content="Авторизоваться"
-                    HorizontalAlignment="Center" 
-                    Height="93" 
-                    Width="315" 
-                    Background="#FFAB0D0D" 
-                    Foreground="White" 
-                    FontSize="36" 
-                    Command="{
-                        x:Bind Path=ViewModel.LoginCommand,
-                        Mode=OneWay}"/>
-            </StackPanel>
-
-            <Button
-                Grid.Row="2"
-                Grid.Column="1"
-                Content="Назад"
+            <Button 
+                Content="Авторизоваться"
                 HorizontalAlignment="Center" 
-                Height="50" 
-                Width="150" 
-                Background="Gray" 
+                Height="93" 
+                Width="315" 
+                Background="#FFAB0D0D" 
                 Foreground="White" 
-                FontSize="25" 
-                Click="Return_Click"/>
+                FontSize="36" 
+                Command="{
+                    x:Bind Path=ViewModel.LoginCommand,
+                    Mode=OneWay}"/>
+            
+        </StackPanel>
 
-        </Grid>
-    </Frame>
+        <!--<Button
+            Grid.Row="2"
+            Grid.Column="1"
+            Content="На главный экран"
+            HorizontalAlignment="Center" 
+            Height="50"
+            Width="250"
+            Background="Gray" 
+            Foreground="White" 
+            FontSize="25" 
+            Click="Return_Click"/>-->
+
+    </Grid>
+    
 </Page>
